@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: quipment-issue-system
+    env: php
+    plan: free
+    buildCommand: "composer install --no-dev --optimize-autoloader"
+    startCommand: "php artisan migrate --force && php artisan serve --host 0.0.0.0 --port $PORT"
+    rootDirectory: .
